@@ -1,0 +1,47 @@
+[v-cloak] {
+    display: none;
+}
+
+#app {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px repeat(3, 1fr) 100px;
+
+    h1 {
+        grid-column: 1 / -1;
+    }
+
+    .enemyWrapper {
+        grid-column: 2 / -2;
+        h2 {
+            text-align: center;
+        }
+        img {
+            height: 200px;
+            @media (orientation: portrait) {
+                height: 100px;
+            }
+        }
+    }
+
+    .meWrapper {
+        grid-column: 1 / -1;
+        grid-row: 3 / 5;
+        h2 {
+            text-align: center;
+        }
+        img {
+            height: 200px;
+            @media (orientation: portrait) {
+                height: 100px;
+            }
+        }
+    }
+
+    .resultWrapper {
+        grid-column: 1 / -1;
+        grid-row: -1 / -2;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <title>じゃんけんゲーム</title>
+</head>
+<body>
+    <div id="app">
+        <!-- タイトル -->
+        <h1>じゃんけんゲーム</h1>
+        <!-- 敵の手 -->
+        <div v-cloak class="enemyWrapper">
+            <h2>敵の手</h2>
+            <img :src="enemyHandImage[enemyHandImageIndex]" :alt="hand[enemyHandImageIndex]">
+        </div>
+
+        <!-- 自分の手 -->
+        <div class="meWrapper">
+            <h2>自分の手</h2>
+            <img @click="fight(0)" src="./img/janken_gu.png" alt="ぐー">
+            <img @click="fight(1)" src="./img/janken_choki.png" alt="ちょき">
+            <img @click="fight(2)" src="./img/janken_pa.png" alt="ぱー">
+        </div>
+
+        <!-- 勝敗 -->
+        <div v-cloak class="resultWrapper">
+            {{ result }}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
